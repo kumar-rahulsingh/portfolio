@@ -9,7 +9,7 @@ import nodeJsImage from "../assets/nodeJS.png";
 import github from "../assets/github.png";
 import tailwind from "../assets/tailwind.png";
 import postmanImage from "../assets/postaman.png"
-// import javaImage from "../assets/java.png"
+import javaImage from "../assets/java.png"
 // import bootstrapImage from "../assets/Bootstrap.png"
 
 const Experience = () => {
@@ -68,12 +68,12 @@ const Experience = () => {
       title: "Postman",
       style: "shadow-gray-400",
     },
-    // {
-    //   id: 9,
-    //   src: javaImage,
-    //   title: "Java",
-    //   style: "shadow-gray-400",
-    // },
+    {
+      id: 9,
+      src: javaImage,
+      title: "Java",
+      style: "shadow-gray-400",
+    },
     // {
     //   id: 9,
     //   src: bootstrapImage,
