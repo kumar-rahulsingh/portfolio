@@ -9,15 +9,16 @@ const Home = () => {
       name="home"
       className="h-screen w-full bg-gradient-to-b from-black via-black to-gray-800"
     >
-      <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
+      {/* Increased padding-top to ensure content starts well below the navbar */}
+      <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row pt-28 md:pt-0">
         <div className="flex flex-col justify-center h-full">
           <h2 className="text-4xl sm:text-7xl font-bold text-white">
             I'm a Full Stack Developer
           </h2>
           <p className="text-gray-500 py-4 max-w-md">
-            I am fresher and design various projects.
+            I am a fresher and design various projects.
             Currently, I love to work on web applications using technologies like
-            React, Tailwind, Express, NodeJs, MongoDB.
+            React, Tailwind, Express, NodeJs, and MongoDB.
           </p>
 
           <div>
@@ -40,7 +41,6 @@ const Home = () => {
             src={HeroImage}
             alt="my profile"
             className="rounded-full mx-auto w-2/3 md:w-full mt-12"
-       
           />
         </div>
       </div>

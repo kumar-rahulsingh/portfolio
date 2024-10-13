@@ -1,36 +1,50 @@
 import React from "react";
-import netflix from "../assets/portfolio/netflix.png";
+import studyNotion from "../assets/portfolio/studyNotion.png";
 import women from "../assets/portfolio/womem.png";
-import navbar from "../assets/portfolio/navbar.jpg";
+import netflix from "../assets/portfolio/netflix.png";
 import Shopshy from "../assets/portfolio/Shopshy.png";
 import resto from "../assets/portfolio/resto.png";
-import reactWeather from "../assets/portfolio/reactWeather.jpg";
+import health from "../assets/portfolio/health.png";
 
 const Portfolio = () => {
   const portfolios = [
     {
       id: 1,
-      src: netflix,
+      src: studyNotion,
+      demo: "https://rahulstudynotion.netlify.app", 
+      code: "https://github.com/kumar-rahulsingh/studyNotion", 
     },
     {
       id: 2,
       src: Shopshy,
+      demo: "https://shop-shy.netlify.app", 
+      code: "https://github.com/kumar-rahulsingh/React-shop", 
     },
+    
     {
       id: 3,
-      src: navbar,
+      src: health,
+      demo: "https://healthies-hub.netlify.app/", 
+      code: "https://github.com/kumar-rahulsingh/HEALTH-HUB",
     },
+    
     {
       id: 4,
       src: resto,
+      demo: "https://foodiees.netlify.app/", 
+      code: "https://github.com/kumar-rahulsingh/Foodies", 
     },
     {
       id: 5,
       src: women,
+      demo: "https://rahule-shop.netlify.app", 
+      code: "https://github.com/kumar-rahulsingh/e-shop", 
     },
     {
-      id: 6,
-      src: reactWeather,
+      id: 3,
+      src: netflix,
+      demo: "https://netfliexclon.netlify.app", 
+      code: "https://github.com/kumar-rahulsingh/Netflixclone", 
     },
   ];
 
@@ -48,7 +62,7 @@ const Portfolio = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
-          {portfolios.map(({ id, src }) => (
+          {portfolios.map(({ id, src, demo, code }) => (
             <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
               <img
                 src={src}
@@ -56,12 +70,22 @@ const Portfolio = () => {
                 className="rounded-md duration-200 hover:scale-105"
               />
               <div className="flex items-center justify-center">
-                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                  {/* Demo */}
-                </button>
-                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                  {/* Code */}
-                </button>
+                <a
+                  href={demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 text-center"
+                >
+                  Demo
+                </a>
+                <a
+                  href={code}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 text-center"
+                >
+                  Code
+                </a>
               </div>
             </div>
           ))}
