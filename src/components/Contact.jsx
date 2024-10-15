@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify"; // Import ToastContainer and toast
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS for toast notifications
 
 const Contact = () => {
-  // Define state for form fields
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     message: "",
   });
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -18,13 +18,9 @@ const Contact = () => {
     }));
   };
 
-  // Handle form submission using axios
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("formData");
-    console.log(formData);
     try {
-      // Replace with your backend API endpoint
       const response = await axios.post(
         "https://infosavebackend.onrender.com/api/sendInfo",
         formData
@@ -32,7 +28,7 @@ const Contact = () => {
 
       if (response.data.success === true) {
         console.log("Form submitted successfully!");
-        // Reset form fields after submission
+        toast.success("Your data has been successfully submitted!"); // Show success toast
         setFormData({
           username: "",
           email: "",
@@ -43,6 +39,7 @@ const Contact = () => {
       }
     } catch (error) {
       console.error("Error submitting form:", error);
+      toast.error("Error submitting form!"); // Show error toast
     }
   };
 
@@ -51,6 +48,7 @@ const Contact = () => {
       name="contact"
       className="w-full h-screen bg-gradient-to-b from-black to-gray-800 p-4 text-white"
     >
+      <ToastContainer /> {/* Add the ToastContainer component */}
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-gray-500">
@@ -67,7 +65,7 @@ const Contact = () => {
             <input
               type="text"
               name="username"
-              value={formData.name}
+              value={formData.username}
               onChange={handleChange}
               placeholder="Enter your name"
               className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
