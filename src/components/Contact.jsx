@@ -1,6 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 const Contact = () => {
+  // Define state for form fields
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    message: "",
+  });
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Handle form submission using axios
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("formData");
+    console.log(formData);
+    try {
+      // Replace with your backend API endpoint
+      const response = await axios.post(
+        "https://infosavebackend.onrender.com/api/sendInfo",
+        formData
+      );
+
+      if (response.data.success === true) {
+        console.log("Form submitted successfully!");
+        // Reset form fields after submission
+        setFormData({
+          username: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        console.error("Failed to submit form");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
+
   return (
     <div
       name="contact"
@@ -16,30 +61,38 @@ const Contact = () => {
 
         <div className=" flex justify-center items-center">
           <form
-            action="https://getform.io/f/61c99527-2b15-42cf-9b55-ad37d2f7daa6"
-            method="POST"
-            className=" flex flex-col w-full md:w-1/2"
+            onSubmit={handleSubmit}
+            className="flex flex-col w-full md:w-1/2"
           >
             <input
               type="text"
-              name="name"
+              name="username"
+              value={formData.name}
+              onChange={handleChange}
               placeholder="Enter your name"
               className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
             />
             <input
-              type="text"
+              type="email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Enter your email"
               className="my-4 p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
             />
             <textarea
               name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Enter your message"
               rows="10"
               className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
             ></textarea>
 
-            <button className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300">
+            <button
+              type="submit"
+              className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300"
+            >
               Let's talk
             </button>
           </form>
