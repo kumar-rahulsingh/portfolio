@@ -35,7 +35,7 @@ const Contact = () => {
           message: "",
         });
       } else {
-        console.error("Failed to submit form");
+        console.error("fill all the datails");
       }
     } catch (error) {
       console.error("Error submitting form:", error);

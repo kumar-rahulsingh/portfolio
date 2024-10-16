@@ -12,20 +12,22 @@ const About = () => {
             About
           </p>
         </div>
-
         <p className="text-xl mt-20">
-          I am MERN developer
-          I am Currently pursuing B.tech from IKG punjab technical university Jalandhar deparment electronics and communication !
+          I am MERN developer I have completed B.tech from IKG punjab technical
+          university Jalandhar deparment electronics and communication !
         </p>
-
         <br />
-
-        <p className="text-xl">
-
-        </p>Completed Higher secondary school (UP board) with  aggregate marks (72%) at Govt. jubilee intermediate college.<br/>
-        Completed Secondary School (CBSE board) with  aggregate marks (9.6 cgpa) at Nav Jeevan Mission School.<br/>
-        👉I AM ABLE TO HANDLE MULTIPLE TASKS ON DAILY BASIS. <br/>👉I USE A CREATIVE APPROACH TO SOLVE THE PROBLEMS.<br/>
-        Aspiring to be a Web Developer and Passionate about Coding and learning new technologies in development
+        <p className="text-xl"></p>Completed Higher secondary school (UP board)
+        with aggregate marks (72%) at Govt. jubilee intermediate college.
+        <br />
+        Completed Secondary School (CBSE board) with aggregate marks (9.6 cgpa)
+        at Nav Jeevan Mission School.
+        <br />
+        👉I AM ABLE TO HANDLE MULTIPLE TASKS ON DAILY BASIS. <br />
+        👉I USE A CREATIVE APPROACH TO SOLVE THE PROBLEMS.
+        <br />
+        Aspiring to be a Web Developer and Passionate about Coding and learning
+        new technologies in development
       </div>
     </div>
   );
